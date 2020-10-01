@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Event</title>
+<script type="text/javascript">
+  function changeColor(color){
+     document.getElementById('body').style.background=color;
+     alert("You Selected " + color)
+     document.getElementById('demo').innerHTML = "Current Color : " + color;
+   }
+function myFunction() {
+  var name =document.myform.name.value
+  alert("The form was submitted successfully " + name);
+}
+function myFunction1(x) {
+  x.style.background = "yellow";
+}
+</script>
+</head>
+<style>
+  body{
+    background-color: pink;
+  }
+  h1,form{
+    padding-top: 100px;
+    color: white;
+  }
+  h2{
+    color: white;
+  }
+</style>
+<body id="body" onload="alert('Page is loading')">
+  <center>
+<h1>Events in Javascript</h1>
+<select onchange="changeColor(this.value)">
+   <option value="lightblue">Lightblue</option>
+   <option value="lightgreen">Lightgreen</option>
+   <option value="indigo">Indigo</option>
+</select>
+<button onclick="alert('call onclick event')">Click event</button>
+<button onmouseover="alert('call onmouseover event')">onmouseover event</button>
+<button onmouseout="alert('call onmouseout event')"> onmouseout event</button>
+<h2 id="demo"></h2>
+<form name="myform" onsubmit="myFunction()">
+  Enter name: <input type="text" onfocus="myFunction1(this)" name="name">
+  <input type="submit" value="Submit">
+</form>
+</center>
+</body>
+</html>
